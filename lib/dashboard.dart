@@ -16,9 +16,9 @@ class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    Home(),
-    Profil(),
-    Calender(),
+    const Home(),
+    const Profil(),
+    const Calender(),
   ];
 
   void _onitemTapped(int index) {
@@ -32,7 +32,7 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [Colors.amber, Colors.blue]),
           ),
         ),
@@ -43,7 +43,7 @@ class _DashboardState extends State<Dashboard> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
             color: Colors.white,
             onPressed: () {
               Get.defaultDialog(
@@ -52,9 +52,10 @@ class _DashboardState extends State<Dashboard> {
                 textConfirm: "Ya",
                 textCancel: "Tidak",
                 onConfirm: () {
-                  Get.offAll(Login());
+                  Get.offAll(const Login());
                 },
                 onCancel: () {
+                  // ignore: avoid_print
                   print("Tidak");
                 },
               );
@@ -68,7 +69,7 @@ class _DashboardState extends State<Dashboard> {
         onTap: _onitemTapped,
         selectedItemColor: Colors.red,
         unselectedItemColor: Colors.blue,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: "Home",
